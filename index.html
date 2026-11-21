@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GA4 Lab 練習網站</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;padding:2rem 1rem;font-family:system-ui,sans-serif;background:linear-gradient(135deg,#e0e7ff,#fce7f3)}
+  main{max-width:40rem;margin:0 auto}
+  h1{margin:0 0 .25rem;text-align:center}
+  p.intro{margin:0 0 2rem;text-align:center;color:#64748b}
+  a{display:flex;gap:1rem;align-items:center;margin:0 0 .75rem;padding:1.1rem 1.25rem;background:#fff;border-radius:1rem;box-shadow:0 8px 24px #0001;color:inherit;text-decoration:none;transition:transform .15s}
+  a:hover{transform:translateY(-2px)}
+  b{flex:none;display:grid;place-items:center;width:2.75rem;height:2.75rem;border-radius:.75rem;color:#fff;font-size:1.1rem}
+  span{color:#64748b;font-size:.9rem}
+  strong{display:block;color:#0f172a}
+</style>
+</head>
+<body>
+<main>
+  <h1>GA4 Lab 練習網站</h1>
+  <p class="intro">每完成一個 Lab，這裡的連結就能打開。還沒做的 Lab 會顯示 404。</p>
+
+  <a href="lab1/"><b style="background:#4f46e5">1</b><div><strong>gtag.js 追蹤按鍵</strong><span>三個方案按鍵，送出自訂事件 plan_click</span></div></a>
+  <a href="lab2/"><b style="background:#0ea5e9">2</b><div><strong>GTM 追蹤按鍵</strong><span>同一個頁面，追蹤全部交給 GTM</span></div></a>
+  <a href="lab3/"><b style="background:#ea580c">3</b><div><strong>UTM 活動網址</strong><span>用活動網址進來，看流量被分到哪個管道</span></div></a>
+  <a href="lab4/"><b style="background:#16a34a">4</b><div><strong>電子商務漏斗</strong><span>查看課程 → 加入購物車 → 完成付款</span></div></a>
+  <a href="lab5/"><b style="background:#9333ea">5</b><div><strong>使用者屬性與指定對象</strong><span>以免費或付費會員登入，再開始上課</span></div></a>
+</main>
+</body>
+</html>
