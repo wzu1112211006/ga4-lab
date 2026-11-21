@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab 1：gtag.js 追蹤按鍵</title>
+<!-- Google tag (gtag.js)：把 G-XXXXXXXXXX 換成你的評估 ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', { debug_mode: true });
+</script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:grid;place-items:center;padding:1rem;font-family:system-ui,sans-serif;background:linear-gradient(135deg,#e0e7ff,#fce7f3)}
+  main{width:100%;max-width:22rem;background:#fff;padding:2rem;border-radius:1.25rem;box-shadow:0 12px 32px #0001;text-align:center}
+  h1{margin:0 0 .25rem;font-size:1.4rem}
+  p{margin:0 0 1.25rem;color:#64748b}
+  button{width:100%;margin:.4rem 0;padding:.9rem;border:0;border-radius:.75rem;font-size:1rem;font-weight:600;color:#fff;cursor:pointer}
+  button:active{transform:scale(.97)}
+  .blue{background:#4f46e5}.pink{background:#db2777}.green{background:#059669}
+  #msg{margin:1rem 0 0;min-height:1.5em;color:#4f46e5}
+</style>
+</head>
+<body>
+<main>
+  <h1>選擇你的方案</h1>
+  <p>點任一方案，GA4 會收到 plan_click 事件</p>
+  <button class="blue" data-plan="free">免費試用</button>
+  <button class="pink" data-plan="pro">專業方案</button>
+  <button class="green" data-plan="team">團隊方案</button>
+  <p id="msg"></p>
+</main>
+<script>
+  document.querySelectorAll('button').forEach(btn => {
+    btn.onclick = () => {
+      gtag('event', 'plan_click', {
+        plan_name: btn.dataset.plan,        // free / pro / team
+        button_text: btn.textContent        // 免費試用 / 專業方案 / 團隊方案
+      });
+      document.querySelector('#msg').textContent = '已送出 plan_click：' + btn.dataset.plan;
+    };
+  });
+</script>
+</body>
+</html>
